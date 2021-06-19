@@ -19,10 +19,10 @@ number: 3027
 Vivliostyle Theme は、Vivliostyle で出版物を作る際に使うスタイルテーマです。Theme の実体は、CSS ファイルと package.json とサンプル原稿です。
 
 Vivliostyle Foundation では、汎用的で多くの人に使ってもらえそうなスタイルを公式 Theme として公開しています。それ以外の個人や組織が公開したものを便宜上非公式 Theme と呼びますが、公式・非公式の違いは管理者以外にはありません。本稿執筆現在、公式 Theme として次の 4 つの Theme といくつかの非公式 Theme が公開されています。
-- [theme-bunko](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-bunko)：A5サイズの縦書きテーマ
+- [theme-bunko](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-bunko)：A5 サイズの縦書きテーマ
 - [theme-slide](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-slide)：スライド資料用テーマ
-- [theme-techbook](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-techbook)：印刷用に小口・ノドの余白を調整した、B5サイズの横書きテーマ
-- [theme-academic](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-academic)：A4サイズの横書きレポート用テーマ
+- [theme-techbook](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-techbook)：印刷用に小口・ノドの余白を調整した、B5 サイズの横書きテーマ
+- [theme-academic](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-academic)：A4 サイズの横書きレポート用テーマ
 
 ## Theme を作ってみよう
 それではオリジナルの Theme を作ってみましょう。今回作るのは、複数人の書き手による小説合同誌のための Theme です。かんたんな条件は以下のとおりです。
@@ -83,8 +83,8 @@ $ tree . -I node_modules
 example/ にはその Theme の適用例となるサンプル原稿を置きます。サンプル原稿は [Create Book](https://github.com/vivliostyle/create-book) を使って出版物を作る際、デフォルトの原稿として採用されます。
 
 scss/ にはスタイルを置きます。Vivliostyle Theme では SCSS を推奨しています。デフォルトで 3 つの SCSS ファイルが作成されており、それぞれの役割は以下のとおりです。もちろん、SCSS ファイルを増やしてもかまいません。
-- theme_print.scss：PDF形式の出版物を印刷するときに適用するスタイル。トンボのスタイルなどはここで定義するとよいでしょう。
-- theme_screen.scss：HTML形式の出版物を閲覧するときに適用するスタイル。コンテンツが画面幅いっぱいに表示されるのを防ぐために表示幅を制限したり、文字サイズを調整したりするとよいでしょう。
+- theme_print.scss：PDF 形式の出版物を印刷するときに適用するスタイル。トンボのスタイルなどはここで定義するとよいでしょう。
+- theme_screen.scss：HTML 形式の出版物を閲覧するときに適用するスタイル。コンテンツが画面幅いっぱいに表示されるのを防ぐために表示幅を制限したり、文字サイズを調整したりするとよいでしょう。
 - theme_common.scss：theme_print.scss や theme_screen.scss で共通して使うスタイル。
 
 ### ② サンプル原稿を用意します
@@ -270,7 +270,7 @@ nav ol {
 ![便利な目次](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview7.png)
 
 ### ⑥ 原稿ごとのテーマカラーを設定します
-せっかくなので、原稿ごと（今回はつまり、著者ごと）にテーマカラーを決めてみましょう。サンプル原稿を少し編集します。`---` で囲まれた [Frontmatter](https://vivliostyle.github.io/vfm/#/vfm#frontmatter) 部分に class を指定すると、body要素にその名前の class を付与することができます。これを使って、原稿ファイルごとに別々のスタイルを適用することができます。便利ですね。
+せっかくなので、原稿ごと（今回はつまり、著者ごと）にテーマカラーを決めてみましょう。サンプル原稿を少し編集します。`---` で囲まれた [Frontmatter](https://vivliostyle.github.io/vfm/#/vfm#frontmatter) 部分に class を指定すると、body 要素にその名前の class を付与できます。これを使って、原稿ファイルごとに別々のスタイルを適用できます。便利ですね。
 
 ```example/ch01.md
 ---
@@ -309,7 +309,7 @@ body.akutagawa {
 ![たとえば、夏目さんは緑色](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview8.png)
 
 ### ⑦完成！
-おつかれさまです！　これで Theme が完成しました。`yarn publish`して npm package として公開すると、Create Book で出版物を作る際にその Theme を選択できるようになります。
+おつかれさまです！　これで Theme が完成しました。`yarn publish` して npm package として公開すると、Create Book で出版物を作る際にその Theme を選択できるようになります。
 
 ![Create Book の Theme 選択画面](https://img.esa.io/uploads/production/attachments/9898/2021/06/19/38623/92cee753-ea68-4d5e-846c-43623392c4b0.png)
 
