@@ -123,7 +123,7 @@ module.exports = {
 $ yarn dev
 ```
 
-![これはデフォルトのスタイル](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview1.png)
+![これはデフォルトのスタイル](assets/preview1.png)
 
 ### ④ ページ番号と章番号を表示します
 次に、ページ番号と章番号を表示してみましょう。theme_common.scss に追記していってもよいのですが、わかりやすさのため、本稿では新しく _my_style.scss というファイルを作ってそこに書いていくことにします。
@@ -167,7 +167,7 @@ h1 {
 
 すると、プレビューはこのようになります。オートリロードされない場合はもう一度 `yarn dev` をしてみてください。
 
-![ページ番号と章番号が表示された](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview3.png)
+![ページ番号と章番号が表示された](assets/preview3.png)
 
 せっかくなのでもっと本らしい見た目にしてみましょう。
 
@@ -197,7 +197,7 @@ html {
 }
 ```
 
-![ちょっと古い教科書みたいですね](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview4.png)
+![ちょっと古い教科書みたいですね](assets/preview4.png)
 
 ### ⑤ 目次を表示します
 ここまででページ番号と章番号を表示できました。次は目次です。Vivliostyle には `<h1>` 見出しをもとに目次を自動生成する機能があるので、これを使います。vivliostyle.config.js に以下の記述を加えて再度 `yarn dev` します。すると、一番最初のページに目次が表示されるようになりました。
@@ -221,7 +221,7 @@ module.exports = {
 @import "theme_common";
 ```
 
-![デフォルトの目次](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview5.png)
+![デフォルトの目次](assets/preview5.png)
 
 もうすこしシュッとした見た目にしてみましょう。まず、不要な部分を隠します。
 
@@ -243,7 +243,7 @@ nav ol {
   list-style: none;
 }
 ```
-![素っ気ない目次](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview6.png)
+![素っ気ない目次](assets/preview6.png)
 
 目次にも対応するページ番号と章番号を表示してみましょう。一気に本らしくなりましたね！　これはもう誰が見ても本です。
 
@@ -267,7 +267,7 @@ nav ol {
 }
 ```
 
-![便利な目次](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview7.png)
+![便利な目次](assets/preview7.png)
 
 ### ⑥ 原稿ごとのテーマカラーを設定します
 せっかくなので、原稿ごと（今回はつまり、著者ごと）にテーマカラーを決めてみましょう。サンプル原稿を少し編集します。`---` で囲まれた [Frontmatter](https://vivliostyle.github.io/vfm/#/vfm#frontmatter) 部分に class を指定すると、body 要素にその名前の class を付与できます。これを使って、原稿ファイルごとに別々のスタイルを適用できます。便利ですね。
@@ -306,12 +306,12 @@ body.akutagawa {
 }
 ```
 
-![たとえば、夏目さんは緑色](https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview8.png)
+![たとえば、夏目さんは緑色](assets/preview8.png)
 
 ### ⑦完成！
 おつかれさまです！　これで Theme が完成しました。`yarn publish` して npm package として公開すると、Create Book で出版物を作る際にその Theme を選択できるようになります。
 
-![Create Book の Theme 選択画面](https://img.esa.io/uploads/production/attachments/9898/2021/06/19/38623/92cee753-ea68-4d5e-846c-43623392c4b0.png)
+![Create Book の Theme 選択画面](assets/92cee753-ea68-4d5e-846c-43623392c4b0.png)
 
 
 ## おわりに

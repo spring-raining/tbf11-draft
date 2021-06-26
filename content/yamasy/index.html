@@ -107,7 +107,7 @@ $ tree . -I node_modules
         <p>それでは、今作ったサンプル原稿にスタイル (theme_print.scss) を適用したものをプレビューしてみましょう。デフォルトの theme_print.scss には、トンボや左上の theme_print という文字を表示するようなスタイルが定義されています。</p>
         <pre class="language-text"><code class="language-text">$ yarn dev</code></pre>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview1.png" alt="これはデフォルトのスタイル">
+          <img src="assets/preview1.png" alt="これはデフォルトのスタイル">
           <figcaption aria-hidden="true">これはデフォルトのスタイル</figcaption>
         </figure>
       </section>
@@ -144,7 +144,7 @@ h1 {
 }</code></pre>
         <p>すると、プレビューはこのようになります。オートリロードされない場合はもう一度 <code>yarn dev</code> をしてみてください。</p>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview3.png" alt="ページ番号と章番号が表示された">
+          <img src="assets/preview3.png" alt="ページ番号と章番号が表示された">
           <figcaption aria-hidden="true">ページ番号と章番号が表示された</figcaption>
         </figure>
         <p>せっかくなのでもっと本らしい見た目にしてみましょう。</p>
@@ -172,7 +172,7 @@ html {
   line-height: 2rem;
 }</code></pre>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview4.png" alt="ちょっと古い教科書みたいですね">
+          <img src="assets/preview4.png" alt="ちょっと古い教科書みたいですね">
           <figcaption aria-hidden="true">ちょっと古い教科書みたいですね</figcaption>
         </figure>
       </section>
@@ -192,7 +192,7 @@ html {
         <p>続いて scss/theme_toc.scss という目次専用のスタイルファイルを作ります。ひとまず theme_common.scss を import しておきます。</p>
         <pre class="language-scss/theme_toc.scss"><code class="language-scss/theme_toc.scss">@import "theme_common";</code></pre>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview5.png" alt="デフォルトの目次">
+          <img src="assets/preview5.png" alt="デフォルトの目次">
           <figcaption aria-hidden="true">デフォルトの目次</figcaption>
         </figure>
         <p>もうすこしシュッとした見た目にしてみましょう。まず、不要な部分を隠します。</p>
@@ -213,7 +213,7 @@ nav ol {
   list-style: none;
 }</code></pre>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview6.png" alt="素っ気ない目次">
+          <img src="assets/preview6.png" alt="素っ気ない目次">
           <figcaption aria-hidden="true">素っ気ない目次</figcaption>
         </figure>
         <p>目次にも対応するページ番号と章番号を表示してみましょう。一気に本らしくなりましたね！　これはもう誰が見ても本です。</p>
@@ -235,7 +235,7 @@ nav ol {
   }
 }</code></pre>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview7.png" alt="便利な目次">
+          <img src="assets/preview7.png" alt="便利な目次">
           <figcaption aria-hidden="true">便利な目次</figcaption>
         </figure>
       </section>
@@ -268,7 +268,7 @@ body.akutagawa {
   }
 }</code></pre>
         <figure>
-          <img src="https://github.com/yamasy1549/slides/raw/master/vivliostyle_meetup_20210410/book/assets/preview8.png" alt="たとえば、夏目さんは緑色">
+          <img src="assets/preview8.png" alt="たとえば、夏目さんは緑色">
           <figcaption aria-hidden="true">たとえば、夏目さんは緑色</figcaption>
         </figure>
       </section>
@@ -276,7 +276,7 @@ body.akutagawa {
         <h3>⑦完成！</h3>
         <p>おつかれさまです！　これで Theme が完成しました。<code>yarn publish</code> して npm package として公開すると、Create Book で出版物を作る際にその Theme を選択できるようになります。</p>
         <figure>
-          <img src="https://img.esa.io/uploads/production/attachments/9898/2021/06/19/38623/92cee753-ea68-4d5e-846c-43623392c4b0.png" alt="Create Book の Theme 選択画面">
+          <img src="assets/92cee753-ea68-4d5e-846c-43623392c4b0.png" alt="Create Book の Theme 選択画面">
           <figcaption aria-hidden="true">Create Book の Theme 選択画面</figcaption>
         </figure>
       </section>

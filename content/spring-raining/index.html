@@ -42,7 +42,7 @@ Below is an example of JSX embedded in Markdown.
         <pre class="language-text"><code class="language-text">npm init mdx gatsby</code></pre>
         <p>これを実行すると、<code>gatsby-mdx</code> というディレクトリに空の Gatsby プロジェクトに MDX プラグインをインストールした状態でセットアップしてくれます。作られたファイルを見てみましょう。</p>
         <p>
-          <img src="https://i.imgur.com/uIsh5ft.png">
+          <img src="assets/uIsh5ft.png">
         </p>
         <p><code>src</code> ディレクトリの中の <code>pages/index.mdx</code> が実際にページとして表示される MDX ファイルです。また、<code>components/Layout.js</code> というファイルは各ページで共通して読み込まれるレイアウトコンポーネントで、中身を見てみると外部のスタイルシートが読み込まれているようです。</p>
         <p>それでは、<code>gatsby-mdx</code> ディレクトリに移動して開発サーバーを起動してみます。以下のコマンドを実行してください。</p>
@@ -53,7 +53,7 @@ Below is an example of JSX embedded in Markdown.
           <p>次に、少し CSS 組版っぽいコンポーネントを作成する例を紹介します。</p>
           <p>「縦中横」は、縦書きの文章中に横組みでテキストを挿入する処理のことで、日本語では数桁の数字を縦中横で組むことがあります。このレイアウトは、CSS では <code>text-combine-upright</code> というプロパティで指定しますが、仕様で定められているもののうち実際にブラウザが実装しているものは <code>none</code> と <code>all</code> のみで、桁数に応じて自動で切り替えてくれる <code>digits &#x3C;integer>?</code> は提供されていません。この問題を、独自コンポーネントで解決してみます。</p>
           <p>
-            <img src="https://i.imgur.com/UR8ww7o.png">
+            <img src="assets/UR8ww7o.png">
           </p>
           <p>まず、<code>src/components</code> ディレクトリに <code>Tcy.js</code> ファイル (一般的に JSX ファイルは通常の JavaScript と区別するために <code>.jsx</code> という拡張子を使う慣習がありますが、Gatsby ではどちらでも良いようです) を作成し、以下のようなコードを書きます。</p>
           <pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
@@ -81,7 +81,7 @@ Below is an example of JSX embedded in Markdown.
           <p>外部のコンポーネントをインポートするときは、JavaScript と同じように <code>import</code> 文を使います。そして、先ほど作成した <code>Tcy</code> コンポーネントに <code>number</code> プロパティを与えます。<code>digits</code> プロパティは省略していますが、同じように与えることができます。</p>
           <p>ブラウザーの開発ツールで見てみると、目的通り「7」と「11」にだけ <code>text-combine-upright: all</code> が設定されていることが確認できます。</p>
           <p>
-            <img src="https://i.imgur.com/RVD8vM5.png">
+            <img src="assets/RVD8vM5.png">
           </p>
         </section>
       </section>
@@ -90,7 +90,7 @@ Below is an example of JSX embedded in Markdown.
         <p>MDX で書かれた文章を解釈するためのパーサーは、<strong>Remark</strong>というライブラリを使って実装されています（最近では Remark の作者である wooorm 氏も MDX の開発に積極的に関わっているので、最近ではむしろ MDX のための機能拡張が Remark に取り入れられるということも多いです）。Remark とは、Markdown を HTML など様々な形式に変換するためのライブラリで、テキストを抽象構文木 (AST) に変換して処理することが特徴です。Remark については、過去に「<a href="https://vivliostyle.org/ja/blog/2019/09/25/make-books-with-vivliostyle-vol2/">Vivilostyleで本を作ろう vol.2</a>」で紹介した記事もあるので、そちらもぜひご覧ください。</p>
         <p>実際に MDX が拡張構文をパースする部分は、Remark のプラグインとして実装されています。そして、生成された AST に従って目的の形式に出力されます。注意したい点は、MDX は Remark とは異なり、入力された MDX ファイルを HTML ではなく JavaScript (もしくは JSX) のコードとして出力される点です。MDX を最終的に HTML の原稿として扱いたい場合は、React などの処理系を通して HTML にレンダリングする必要があります。</p>
         <p>
-          <img src="https://i.imgur.com/jZsfIV3.png">
+          <img src="assets/jZsfIV3.png">
         </p>
         <p>本来の用途であれば、この JavaScript はブラウザが読み込むことで動的に DOM が構築されるので、HTML に変換する必要はありません。しかし、Vivliostyle は静的な HTML のみを読み込むため、このまま原稿として使うには不便です。そこで、フロントエンドの世界で<strong>スタティックサイトジェネレート</strong> (SSG) と呼ばれる技術 (類似のテクニックにサーバーサイドレンダリング (SSR) があります。どのタイミングでレンダリングするかの違いだけなので、今回の例では本質的な違いはありません。) を使い、原稿として読み込める HTML への変換を試みます。</p>
         <section id="原稿をssgで生成する" class="level3">
