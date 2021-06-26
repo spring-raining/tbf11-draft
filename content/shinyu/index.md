@@ -1,5 +1,5 @@
 ---
-title: CSS組版の基本仕様 CSS Paged Media 入門のススメ
+title: CSS 組版の基本仕様 CSS Paged Media 入門のススメ
 author:
   - 村上真雄
 ---
