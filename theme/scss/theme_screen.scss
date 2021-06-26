@@ -4,8 +4,12 @@
   body {
     margin: auto 4rem;
     margin: 0 auto;
-    padding: 8rem 8px 4rem;
+    padding: 8rem 1rem 4rem;
     max-width: 60rem;
+
+    @media (min-width: 920px) {
+      padding-right: 12rem;
+    }
   }
   section {
     clear: both;
@@ -16,10 +20,18 @@
   }
 
   .footnote {
-    vertical-align: super;
     background-color: rgba(214, 255, 0, 0.4);
-    margin: 0 0.1rem;
-    line-height: 0;
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 85%;
+    border-radius: 0.25rem;
+
+    @media (min-width: 920px) {
+      float: right;
+      width: 9rem;
+      margin-right: -11rem;
+    }
 
     a {
       word-break: break-all;

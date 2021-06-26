@@ -5,6 +5,9 @@ body {
 title {
   string-set: doc-title content();
 }
+meta[name="author"] {
+  string-set: doc-author content();
+}
 
 a[data-ref="sec"],
 a[data-ref="subsec"],
@@ -44,9 +47,9 @@ section {
   }
 }
 
-figure img.fig {
+figure {
   counter-increment: fig;
-  & ~ figcaption::before {
+  figcaption::before {
     content: '図' counter(fig) ': ';
   }
 }
@@ -67,7 +70,7 @@ figure.tbl {
 
   &::footnote-call {
     font-size: 80%;
-    margin: 0 .3rem;
+    margin: 0 .2rem;
   }
 
   &::footnote-marker {

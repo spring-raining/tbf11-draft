@@ -58,6 +58,8 @@
 
   .footnote {
     font-size: $footnote-font-size-for-print;
+    font-weight: 400;
+    line-height: 1.7;
     float: footnote;
     text-align: left;
   }
@@ -115,15 +117,14 @@
 
   @top-center {
     content: env(pub-title);
-    font-family: $font-family;
+    font-family: $font-family-body;
     font-size: $master-font-size-for-print;
-    color: $color_white;
     text-align: left;
     padding-top: 8mm;
   }
   @bottom-left {
     content: counter(page);
-    font-family: $font-family;
+    font-family: $font-family-body;
     font-size: $master-font-size-for-print;
     border-left: 1px solid;
     margin-top: 15mm;
@@ -139,15 +140,14 @@
 
   @top-center {
     content: env(doc-title);
-    font-family: $font-family;
+    font-family: $font-family-body;
     font-size: $master-font-size-for-print;
-    color: $color_white;
     text-align: right;
     padding-top: 8mm;
   }
   @bottom-right {
     content: counter(page);
-    font-family: $font-family;
+    font-family: $font-family-body;
     font-size: $master-font-size-for-print;
     border-right: 1px solid;
     margin-top: 15mm;

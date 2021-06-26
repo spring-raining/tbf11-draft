@@ -128,7 +128,8 @@ pre[class*=language-] {
   text-shadow: none !important;
 }
 
-:not(pre) > code {
+:not(pre) > code,
+:not(pre) > kbd {
   padding: 0.2rem 0.4rem;
   background-color: #ecf0f1;
   border-radius: 0.2rem;
@@ -201,45 +202,90 @@ pre[class*=language-] {
 @font-face {
   font-family: "body";
   font-weight: 100;
-  src: local("TazuganeGothicStdN-UltLt");
+  src: local("TazuganeInfoStdN-UltLt");
 }
 @font-face {
   font-family: "body";
   font-weight: 200;
-  src: local("TazuganeGothicStdN-Thin");
+  src: local("TazuganeInfoStdN-Thin");
 }
 @font-face {
   font-family: "body";
   font-weight: 300;
-  src: local("TazuganeGothicStdN-Light");
+  src: local("TazuganeInfoStdN-Light");
 }
 @font-face {
   font-family: "body";
   font-weight: 400;
-  src: local("TazuganeGothicStdN-Book");
+  src: local("TazuganeInfoStdN-Book");
 }
 @font-face {
   font-family: "body";
   font-weight: 500;
-  src: local("TazuganeGothicStdN-Regular");
+  src: local("TazuganeInfoStdN-Regular");
 }
 @font-face {
   font-family: "body";
   font-weight: 600;
-  src: local("TazuganeGothicStdN-Medium");
+  src: local("TazuganeInfoStdN-Medium");
 }
 @font-face {
   font-family: "body";
   font-weight: 700;
-  src: local("TazuganeGothicStdN-Heavy");
+  src: local("TazuganeInfoStdN-Heavy");
 }
 @font-face {
   font-family: "body";
   font-weight: 800;
-  src: local("TazuganeGothicStdN-Black");
+  src: local("TazuganeInfoStdN-Black");
 }
 @font-face {
   font-family: "body";
+  font-weight: 900;
+  src: local("TazuganeInfoStdN-XBlack");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 100;
+  src: local("TazuganeGothicStdN-UltLt");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 200;
+  src: local("TazuganeGothicStdN-Thin");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 300;
+  src: local("TazuganeGothicStdN-Light");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 400;
+  src: local("TazuganeGothicStdN-Book");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 500;
+  src: local("TazuganeGothicStdN-Regular");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 600;
+  src: local("TazuganeGothicStdN-Medium");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 700;
+  src: local("TazuganeGothicStdN-Heavy");
+}
+@font-face {
+  font-family: "heading";
+  font-weight: 800;
+  src: local("TazuganeGothicStdN-Black");
+}
+@font-face {
+  font-family: "heading";
   font-weight: 900;
   src: local("TazuganeGothicStdN-XBlack");
 }
@@ -255,7 +301,11 @@ pre[class*=language-] {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Neue Frutiger World", "Verdana", "Yakumono", "heading", "Hiragino Sans", sans-serif;
   font-feature-settings: "palt", "calt";
 }
 
@@ -293,7 +343,7 @@ p {
   text-align: justify;
 }
 
-code {
+code, kbd {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
 }
 
@@ -374,6 +424,10 @@ title {
   string-set: doc-title content();
 }
 
+meta[name=author] {
+  string-set: doc-author content();
+}
+
 a[data-ref=sec],
 a[data-ref=subsec],
 a[data-ref=fig],
@@ -412,10 +466,10 @@ section article {
   counter-increment: subsection;
 }
 
-figure img.fig {
+figure {
   counter-increment: fig;
 }
-figure img.fig ~ figcaption::before {
+figure figcaption::before {
   content: "図" counter(fig) ": ";
 }
 
@@ -434,7 +488,7 @@ figure.tbl figcaption::before {
 }
 .footnote::footnote-call {
   font-size: 80%;
-  margin: 0 0.3rem;
+  margin: 0 0.2rem;
 }
 .footnote::footnote-marker {
   margin-right: 0.2rem;
@@ -511,6 +565,8 @@ pre[class*=language-] {
 
   .footnote {
     font-size: 10px;
+    font-weight: 400;
+    line-height: 1.7;
     float: footnote;
     text-align: left;
   }
@@ -561,7 +617,6 @@ pre[class*=language-] {
     content: env(pub-title);
     font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
     font-size: 12px;
-    color: #ffffff;
     text-align: left;
     padding-top: 8mm;
   }
@@ -583,7 +638,6 @@ pre[class*=language-] {
     content: env(doc-title);
     font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
     font-size: 12px;
-    color: #ffffff;
     text-align: right;
     padding-top: 8mm;
   }
@@ -605,6 +659,9 @@ pre[class*=language-] {
 }
 @-adapt-footnote-area {
   word-break: break-all;
+}
+.doc-author {
+  text-align: right;
 }
 
 /*# sourceMappingURL=theme_common.css.map */
