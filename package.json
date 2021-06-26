@@ -8,7 +8,9 @@
     "build": "run-s build:*",
     "build:theme": "sass theme/scss:theme",
     "build:content": "vs build",
-    "lint": "textlint ./content/**"
+    "lint": "textlint ./content/**",
+    "preview": "vs preview",
+    "watch:theme": "sass --watch theme/scss:theme"
   },
   "devDependencies": {
     "@vivliostyle/cli": "^3.5.0",

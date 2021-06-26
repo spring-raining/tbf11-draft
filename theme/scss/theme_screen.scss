@@ -1,33 +1,52 @@
-/*
- * For browser viewing:
- * load this style in Web publications (format: webpub)
- */
-
-/* common styles */
 @import 'theme_common';
 
-@page {
-  /* if you open the publication on Vivliostyle Viewer, this message will be shown */
-  @top-left {
-    content: 'theme_screen';
+@media screen {
+  body {
+    margin: auto 4rem;
+    margin: 0 auto;
+    padding: 8rem 8px 4rem;
+    max-width: 60rem;
+  }
+  section {
+    clear: both;
+  }
+
+  figure {
+    max-width: 50rem;
+  }
+
+  .footnote {
+    vertical-align: super;
+    background-color: rgba(214, 255, 0, 0.4);
+    margin: 0 0.1rem;
+    line-height: 0;
+
+    a {
+      word-break: break-all;
+    }
+  }
+
+  a[data-ref='sec'],
+  a[data-ref='subsec'],
+  a[data-ref='fig'],
+  a[data-ref='tbl'],
+  a[data-ref='cite'] {
+    color: $color_red;
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  a[data-ref='sec']::before {
+    content: 'XXX 章';
+  }
+  a[data-ref='subsec']::before {
+    content: 'XXX.XXX 章';
+  }
+  a[data-ref='fig']::before {
+    content: '図 XXX';
+  }
+  a[data-ref='tbl']::before {
+    content: '表 XXX';
+  }
+  a[data-ref='cite']::before {
+    content: '[XXX]';
   }
 }
-
-/* for wide screen */
-body {
-  max-width: 800px;
-  margin: 2rem auto 2rem;
-}
-
-/* highlight footnote */
-.footnote {
-  vertical-align: super;
-  background-color: aliceblue;
-  color: gray;
-
-  a {
-    word-break: break-all;
-  }
-}
-
-/* and more... 🖋 */
