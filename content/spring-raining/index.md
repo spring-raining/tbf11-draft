@@ -1,14 +1,23 @@
+---
+title: Markdown を拡張する MDX はドキュメント作成の新たな可能性？
+author: spring-raining
+---
+
 # Markdown を拡張する MDX はドキュメント作成の新たな可能性？
 
-はじめましてこんにちは、spring-raining です。今回の記事では、またしても CSS 組版とは直接関係ないものの、個人的にお気に入りの OSS プロジェクト「MDX」を紹介します。
+<div class="doc-author">
+spring-raining
+</div>
+
+はじめましてこんにちは、spring-raining です。今回の記事では、またしても CSS 組版とは直接関係ないものの、個人的にお気に入りの OSS プロジェクト「[MDX](https://mdxjs.com/)」を紹介します。
 
 ## MDX = Markdown + JSX
 
-MDX (https://mdxjs.com/) の名前の由来は Markdown + JSX なので、MDX を理解するためにはまず JSX について知る必要があります。
+MDX の名前の由来は Markdown + JSX なので、MDX を理解するためにはまず JSX について知る必要があります。
 
 JSX とは JavaScript の拡張構文の一つで、元々 React のために考え出されたものです。Web アプリケーションの開発の経験がないと前提知識が多く難しい内容ですが、React とは Web アプリケーションを作成するための有名なライブラリで、ざっくり言うと JavaScript のソースコードの中で HTML (XML) タグを扱いやすくしたものが JSX です。
 
-この JSX を Markdown に埋め込んだものが MDX です。上記の成り立ちの通り、MDX は一見すると Markdown に HTML が埋め込れたもののように見えます。(この例の `style` 属性のように、本来の XML とは全然違う構文ももちろんありますが、JSX の詳細についてはこの記事では割愛します)
+この JSX を Markdown に埋め込んだものが MDX です。上記の成り立ちの通り、MDX は一見すると Markdown に HTML が埋め込れたもののように見えます。<span class="footnote">この例の `style` 属性のように、本来の XML とは全然違う構文ももちろんありますが、JSX の詳細についてはこの記事では割愛します</span>
 
 ```mdx
 # Hello, *world*!
@@ -36,7 +45,7 @@ MDX を使うことで、原稿として書かれた Markdown は上記の JSX �
 
 ## MDX の始めかた
 
-MDX の公式サイトでは、MDX を使う方法について詳しく書かれています (https://mdxjs.com/getting-started/)。MDX自体はテキスト変換のためのライブラリを提供しているだけなので、他のWebアプリケーション作成フレームワークと組み合わせて使います。JSXをベースとする都合上、基本的にReactを採用したフレームワークを使うほうが良いでしょう。今回は、**Gatsby**というフレームワークと組み合わせて使う例を紹介します。
+MDX の公式サイトでは、[MDX を使う方法](https://mdxjs.com/getting-started/)について詳しく書かれています。MDX 自体はテキスト変換のためのライブラリを提供しているだけなので、他の Web アプリケーション作成フレームワークと組み合わせて使います。JSX をベースとする都合上、基本的に React を採用したフレームワークを使うほうが良いでしょう。今回は、**Gatsby** というフレームワークと組み合わせて使う例を紹介します。
 
 プロジェクトファイルの作成自体はとても簡単です。Node.js が使用できる環境で、以下のコマンドを実行します。
 
@@ -46,7 +55,7 @@ npm init mdx gatsby
 
 これを実行すると、`gatsby-mdx` というディレクトリに空の Gatsby プロジェクトに MDX プラグインをインストールした状態でセットアップしてくれます。作られたファイルを見てみましょう。
 
-![](assets/uIsh5ft.png)
+![gatsby-mdx のプロジェクト構成](assets/uIsh5ft.png){width="40%"}
 
 `src` ディレクトリの中の `pages/index.mdx` が実際にページとして表示される MDX ファイルです。また、`components/Layout.js` というファイルは各ページで共通して読み込まれるレイアウトコンポーネントで、中身を見てみると外部のスタイルシートが読み込まれているようです。
 
@@ -64,10 +73,12 @@ npm run start
 
 「縦中横」は、縦書きの文章中に横組みでテキストを挿入する処理のことで、日本語では数桁の数字を縦中横で組むことがあります。このレイアウトは、CSS では `text-combine-upright` というプロパティで指定しますが、仕様で定められているもののうち実際にブラウザが実装しているものは `none` と `all` のみで、桁数に応じて自動で切り替えてくれる `digits <integer>?` は提供されていません。この問題を、独自コンポーネントで解決してみます。
 
-![](assets/UR8ww7o.png)
+<figure>
+  <img src="assets/UR8ww7o.png" alt="縦中横の適用例 (日本語組版処理の要件より引用)" width="15%">
+  <figcaption aria-hidden="true">縦中横の適用例 (<a href="https://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/">日本語組版処理の要件</a>より引用)</figcaption>
+</figure>
 
-
-まず、`src/components` ディレクトリに `Tcy.js` ファイル (一般的に JSX ファイルは通常の JavaScript と区別するために `.jsx` という拡張子を使う慣習がありますが、Gatsby ではどちらでも良いようです) を作成し、以下のようなコードを書きます。
+まず、`src/components` ディレクトリに `Tcy.js` ファイル <span class="footnote">一般的に JSX ファイルは通常の JavaScript と区別するために `.jsx` という拡張子を使う慣習がありますが、Gatsby ではどちらでも良いようです</span> を作成し、以下のようなコードを書きます。
 
 ```jsx
 import React from 'react';
@@ -103,19 +114,19 @@ import { Tcy } from '../components/Tcy';
 
 ブラウザーの開発ツールで見てみると、目的通り「7」と「11」にだけ `text-combine-upright: all` が設定されていることが確認できます。
 
-![](assets/RVD8vM5.png)
+![独自コンポーネントのレンダリング結果](assets/RVD8vM5.png){width="80%"}
 
 ## MDX のしくみ
 
-MDX で書かれた文章を解釈するためのパーサーは、**Remark**というライブラリを使って実装されています（最近では Remark の作者である wooorm 氏も MDX の開発に積極的に関わっているので、最近ではむしろ MDX のための機能拡張が Remark に取り入れられるということも多いです）。Remark とは、Markdown を HTML など様々な形式に変換するためのライブラリで、テキストを抽象構文木 (AST) に変換して処理することが特徴です。Remark については、過去に「[Vivilostyleで本を作ろう vol.2](https://vivliostyle.org/ja/blog/2019/09/25/make-books-with-vivliostyle-vol2/)」で紹介した記事もあるので、そちらもぜひご覧ください。
+MDX で書かれた文章を解釈するためのパーサーは、**Remark**というライブラリを使って実装されています。<span class="footnote">最近では Remark の作者である wooorm 氏も MDX の開発に積極的に関わっているので、最近ではむしろ MDX のための機能拡張が Remark に取り入れられるということも多いです。</span>Remark とは、Markdown を HTML など様々な形式に変換するためのライブラリで、テキストを抽象構文木 (AST) に変換して処理することが特徴です。Remark については、過去に「[Vivilostyleで本を作ろう vol.2](https://vivliostyle.org/ja/blog/2019/09/25/make-books-with-vivliostyle-vol2/)」で紹介した記事もあるので、そちらもぜひご覧ください。
 
 実際に MDX が拡張構文をパースする部分は、Remark のプラグインとして実装されています。そして、生成された AST に従って目的の形式に出力されます。注意したい点は、MDX は Remark とは異なり、入力された MDX ファイルを HTML ではなく JavaScript (もしくは JSX) のコードとして出力される点です。MDX を最終的に HTML の原稿として扱いたい場合は、React などの処理系を通して HTML にレンダリングする必要があります。
 
-![](assets/jZsfIV3.png)
+![MDX ファイルのレンダリングフロー](assets/mdx-transpile-flow.svg)
 
-本来の用途であれば、この JavaScript はブラウザが読み込むことで動的に DOM が構築されるので、HTML に変換する必要はありません。しかし、Vivliostyle は静的な HTML のみを読み込むため、このまま原稿として使うには不便です。そこで、フロントエンドの世界で**スタティックサイトジェネレート** (SSG) と呼ばれる技術 (類似のテクニックにサーバーサイドレンダリング (SSR) があります。どのタイミングでレンダリングするかの違いだけなので、今回の例では本質的な違いはありません。) を使い、原稿として読み込める HTML への変換を試みます。
+本来の用途であれば、この JavaScript はブラウザが読み込むことで動的に DOM が構築されるので、HTML に変換する必要はありません。しかし、Vivliostyle は静的な HTML のみを読み込むため、このまま原稿として使うには不便です。そこで、フロントエンドの世界で **スタティックサイトジェネレート** (SSG) と呼ばれる技術<span class="footnote">類似のテクニックにサーバーサイドレンダリング (SSR) があります。どのタイミングでレンダリングするかの違いだけなので、今回の例では本質的な違いはありません。</span>を使い、原稿として読み込める HTML への変換を試みます。
 
-### 原稿をSSGで生成する
+### 原稿を SSG で生成する
 
 大げさな前置きを書いた手前で恐縮ですが、前の章で紹介した Gatsby を使っている場合、実はコマンド一つで生成できます。
 
@@ -161,7 +172,7 @@ JSX として見るとこのように解釈されます。
 
 MDX をドキュメント作成として使う場合、これまでは外部のライブラリはコンポーネントとしてしか読み込めなかったので、使い勝手はあまり良くなかったです。この変更により、インラインで JavaScript の便利な機能を埋め込めるようになるので使い道がぐっと広がっています！
 
-### MDASTの変更
+### MDAST の変更
 
 上記の変更も含めて、MDX をパースした時に生成される MDAST (Markdown AST) の構造が大きく変わっています。MDX v1 では、MDAST に以下のようなタイプ名のノードが拡張されていました。
 
@@ -181,8 +192,6 @@ MDX 中の JSX タグをパースします。ブロックとして JSX が出現
 
 ```jsx
 <MyComponent {...props}/>
-
-<abbr title="Hypertext Markup Language">HTML</abbr> is a lovely language.
 ```
 
 ```javascript
@@ -219,24 +228,6 @@ MDX 中の JSX タグをパースします。ブロックとして JSX が出現
         }
       ],
       children: []
-    },
-    {
-      type: 'paragraph',
-      children: [
-        {
-          type: 'mdxJsxTextElement',
-          name: 'abbr',
-          attributes: [
-            {
-              type: 'mdxJsxAttribute',
-              name: 'title',
-              value: 'Hypertext Markup Language'
-            }
-          ],
-          children: [{type: 'text', value: 'HTML'}]
-        },
-        {type: 'text', value: ' is a lovely language.'}
-      ]
     }
   ]
 }

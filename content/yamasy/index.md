@@ -1,28 +1,29 @@
 ---
 title: Vivliostyle Theme のつくりかた
-category: 非日記
-tags:
-created_at: '2021-06-19T00:59:37+09:00'
-updated_at: '2021-06-19T13:03:09+09:00'
-published: true
-number: 3027
+author: やましー
 ---
+
+# Vivliostyle Theme のつくりかた
+
+<div class="doc-author">
+やましー
+</div>
 
 本稿は、Vivliostyle Theme を自作して配布する方法について書かれたものです。内容は[Vivliostyle ユーザーと開発者の集い 2021春](https://vivliostyle.connpass.com/event/208401/)で話したものです。
 
 ## はじめに
 こんにちは、[やましー](https://twitter.com/yamasy1549)といいます。Vivliostyle ユーザ歴はもう 4 年近くなります。
 
-最初の同人誌[『Vivliostyle で本を作ろう Vol.1』](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol1/) では、[『CSS 組版やってみた！』](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol1/yamasy/index.html)という題で Vivliostyle を使って同人誌や卒論を書いた際の tips を紹介しています。前回の同人誌[『Vivliostyle で本を作ろう Vol.4』](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol4/) では[『@vivliostyle/theme-academic でレポート書いてみた！』](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol4/artifacts/content/yamasy/index.html)という題で記事を書いています。本稿では、Vivliostyle を使って出版物を作る際に必要になる Vivliostyle Theme を自作する方法を紹介します。
+最初の同人誌[『Vivliostyle で本を作ろう Vol.1』](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol1/) では、『CSS 組版やってみた！』という題で Vivliostyle を使って同人誌や卒論を書いた際の tips を紹介しています。前回の同人誌[『Vivliostyle で本を作ろう Vol.4』](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol4/) では『@vivliostyle/theme-academic でレポート書いてみた！』という題で記事を書いています。本稿では、Vivliostyle を使って出版物を作る際に必要になる Vivliostyle Theme を自作する方法を紹介します。
 
 ## Vivliostyle Theme とは
 Vivliostyle Theme は、Vivliostyle で出版物を作る際に使うスタイルテーマです。Theme の実体は、CSS ファイルと package.json とサンプル原稿です。
 
 Vivliostyle Foundation では、汎用的で多くの人に使ってもらえそうなスタイルを公式 Theme として公開しています。それ以外の個人や組織が公開したものを便宜上非公式 Theme と呼びますが、公式・非公式の違いは管理者以外にはありません。本稿執筆現在、公式 Theme として次の 4 つの Theme といくつかの非公式 Theme が公開されています。
-- [theme-bunko](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-bunko)：A5 サイズの縦書きテーマ
-- [theme-slide](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-slide)：スライド資料用テーマ
-- [theme-techbook](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-techbook)：印刷用に小口・ノドの余白を調整した、B5 サイズの横書きテーマ
-- [theme-academic](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-academic)：A4 サイズの横書きレポート用テーマ
+- theme-bunko：A5 サイズの縦書きテーマ
+- theme-slide：スライド資料用テーマ
+- theme-techbook：印刷用に小口・ノドの余白を調整した、B5 サイズの横書きテーマ
+- theme-academic：A4 サイズの横書きレポート用テーマ
 
 ## Theme を作ってみよう
 それではオリジナルの Theme を作ってみましょう。今回作るのは、複数人の書き手による小説合同誌のための Theme です。かんたんな条件は以下のとおりです。
@@ -167,7 +168,7 @@ h1 {
 
 すると、プレビューはこのようになります。オートリロードされない場合はもう一度 `yarn dev` をしてみてください。
 
-![ページ番号と章番号が表示された](assets/preview3.png)
+![ページ番号と章番号が表示された](assets/preview3.png){width="50%"}
 
 せっかくなのでもっと本らしい見た目にしてみましょう。
 
@@ -197,7 +198,7 @@ html {
 }
 ```
 
-![ちょっと古い教科書みたいですね](assets/preview4.png)
+![ちょっと古い教科書みたいですね](assets/preview4.png){width="50%"}
 
 ### ⑤ 目次を表示します
 ここまででページ番号と章番号を表示できました。次は目次です。Vivliostyle には `<h1>` 見出しをもとに目次を自動生成する機能があるので、これを使います。vivliostyle.config.js に以下の記述を加えて再度 `yarn dev` します。すると、一番最初のページに目次が表示されるようになりました。
@@ -221,7 +222,7 @@ module.exports = {
 @import "theme_common";
 ```
 
-![デフォルトの目次](assets/preview5.png)
+![デフォルトの目次](assets/preview5.png){width="50%"}
 
 もうすこしシュッとした見た目にしてみましょう。まず、不要な部分を隠します。
 
@@ -243,7 +244,7 @@ nav ol {
   list-style: none;
 }
 ```
-![素っ気ない目次](assets/preview6.png)
+![素っ気ない目次](assets/preview6.png){width="50%"}
 
 目次にも対応するページ番号と章番号を表示してみましょう。一気に本らしくなりましたね！　これはもう誰が見ても本です。
 
@@ -267,7 +268,7 @@ nav ol {
 }
 ```
 
-![便利な目次](assets/preview7.png)
+![便利な目次](assets/preview7.png){width="50%"}
 
 ### ⑥ 原稿ごとのテーマカラーを設定します
 せっかくなので、原稿ごと（今回はつまり、著者ごと）にテーマカラーを決めてみましょう。サンプル原稿を少し編集します。`---` で囲まれた [Frontmatter](https://vivliostyle.github.io/vfm/#/vfm#frontmatter) 部分に class を指定すると、body 要素にその名前の class を付与できます。これを使って、原稿ファイルごとに別々のスタイルを適用できます。便利ですね。
@@ -306,7 +307,7 @@ body.akutagawa {
 }
 ```
 
-![たとえば、夏目さんは緑色](assets/preview8.png)
+![たとえば、夏目さんは緑色](assets/preview8.png){width="50%"}
 
 ### ⑦完成！
 おつかれさまです！　これで Theme が完成しました。`yarn publish` して npm package として公開すると、Create Book で出版物を作る際にその Theme を選択できるようになります。

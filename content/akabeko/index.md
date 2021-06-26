@@ -3,6 +3,12 @@ title: "VFM 入門 2021 夏"
 author: "アカベコ"
 ---
 
+# VFM 入門 2021 夏
+
+<div class="doc-author">
+アカベコ
+</div>
+
 VFM (Vivliostyle Flavored Markdown) の入門記事です。内容は執筆時点の最新版となる 1.0.0-alpha.22 へ基づきます。
 
 ## VFM とは？
@@ -20,10 +26,7 @@ Vivliostyle プロジェクト向けの Markdown 方言として 2020/7 に始�
 
 ### Node.js と npm
 
-VFM および、これを採用する Vivliostyle 関連プロジェクトは主に Node.js 上で動作します。Node.js のインストール方法は複数ありますが、最も簡単なのは公式サイトから入手したインストーラーを実行することです。
-
-- Node.js 公式サイト  
-https://nodejs.org/ja/
+VFM および、これを採用する Vivliostyle 関連プロジェクトは主に Node.js 上で動作します。Node.js のインストール方法は複数ありますが、最も簡単なのは[公式サイト](https://nodejs.org/ja/)から入手したインストーラーを実行することです。
 
 Node.js がインストールできたら、次はコマンドを実行するための環境を用意します。ここでは Windows 10 と macOS 11 に限定して OS 標準でも利用可能なものを挙げます。本稿では以後、これらをまとめて**ターミナル**と呼びます。
 
@@ -118,12 +121,7 @@ npm run preview
 
 ここからは VFM の構文を紹介してゆきます。
 
-CommonMark と GFM を基本としていますが、これらは広く普及しているため本稿では取り上げません。以下の公式ページを参考にするか `GFM 書き方` というキーワードで Google 検索するとわかりやすい記事が見つかるでしょう。
-
-- CommonMark  
-  https://commonmark.org/
-- GFM
-  https://github.github.com/gfm/
+[CommonMark](https://commonmark.org/) と [GFM](https://github.github.com/gfm/) を基本としていますが、これらは広く普及しているため本稿では取り上げません。以下の公式ページを参考にするか `GFM 書き方` というキーワードで Google 検索するとわかりやすい記事が見つかるでしょう。
 
 それでは構文の解説に入りましょう。
 
@@ -131,8 +129,7 @@ CommonMark と GFM を基本としていますが、これらは広く普及し�
 
 公式の仕様書を元に補足してゆく形式となります。
 
-- Vivliostyle Flavored Markdown: Working Draft  
-  https://vivliostyle.github.io/vfm/#/vfm
+- [Vivliostyle Flavored Markdown: Working Draft](https://vivliostyle.github.io/vfm/#/vfm)
 
 **VFM**
 
@@ -288,8 +285,7 @@ figure figcaption {
 
 小説などテキスト主体の書籍において、ルビは表現の幅を広げる重要な機能といえます。そのため以下の仕様検討 Issue でも機能強化を検討中です。興味を持たれたなら議論に参加していただけると幸いです。
 
-- spec: Ruby annotation  
-  https://github.com/vivliostyle/vfm/issues/10
+- [spec: Ruby annotation](https://github.com/vivliostyle/vfm/issues/10)
 
 **VFM**
 
@@ -426,10 +422,7 @@ VFM では難しい表現がある場合、生の HTML を利用できます。
 
 ### Math equation
 
-MathJax の数式を処理します。
-
-- MathJax | Beautiful math in all browsers.  
-https://www.mathjax.org/
+[MathJax](https://www.mathjax.org/) の数式を処理します。
 
 `$...$` でインライン数式、`$$...$$` はディスプレイ数式となります。
 
@@ -586,8 +579,7 @@ Markdown の段落内における改行は通常、行末にスペース 2 文�
 
 文章主体の書籍で明示的な改行が多い場合に便利です。ただしあらゆる改行を `<br>` とするため前述の Raw HTML を利用して記述した一部の HTML や SVG 内の改行が `<br>` となってしまいます。この問題の詳細は以下の GitHub Issue を参照してください。
 
-- svg タグ内の改行が br タグに変換される  
-https://github.com/vivliostyle/vfm/issues/38
+- [svg タグ内の改行が br タグに変換される](https://github.com/vivliostyle/vfm/issues/38)
 
 現在の VFM としては標準では無効化されており、オプションで有効にする必要があります。
 
@@ -631,7 +623,5 @@ VFM は文章作成を目的とした Markdown 方言です。そのため文章
 
 もし意見や要望などがあれば、以下へ問い合わせてください。日本語でも大丈夫ですので、気軽にどうぞ！
 
-- Vivliostyle Slack    
-https://vivliostyle.slack.com/
-- Issues - vivliostyle/vfm  
-https://github.com/vivliostyle/vfm/issues
+- [Vivliostyle Slack](https://vivliostyle.slack.com/)
+- [Issues - vivliostyle/vfm](https://github.com/vivliostyle/vfm/issues)
