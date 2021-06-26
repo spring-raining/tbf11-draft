@@ -3,7 +3,7 @@ module.exports = {
   author: 'Vivliostyle ユーザー会', // default to 'author' in 'package.json' or undefined
   language: 'ja',
   size: 'A4',
-  // theme: '', // .css or local dir or npm package. default to undefined
+  theme: 'theme/theme_print.css', // .css or local dir or npm package. default to undefined
   entry: [
     'content/index.html',
     'content/yamasy/index.md',
