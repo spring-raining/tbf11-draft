@@ -7,12 +7,18 @@
   "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
   "author": "Vivliostyle ユーザー会",
   "inLanguage": "ja",
-  "dateModified": "2021-06-26T04:34:38.744Z",
+  "dateModified": "2021-06-27T18:57:18.219Z",
   "name": "Vivliostyle で本を作ろう Vol. 5",
   "readingOrder": [
     {
       "url": "content/index.html",
-      "title": "Vivliostyle で本を作ろう Vol. 5"
+      "title": "Vivliostyle で本を作ろう Vol. 5",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "content/maegaki.html",
+      "title": "まえがき"
     },
     {
       "url": "content/yamasy/index.html",
@@ -33,6 +39,10 @@
     {
       "url": "content/shinyu/index.html",
       "title": "CSS 組版の基本仕様 CSS Paged Media 入門のススメ"
+    },
+    {
+      "url": "content/atogaki.html",
+      "title": "あとがき"
     }
   ],
   "resources": [],

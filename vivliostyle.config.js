@@ -5,12 +5,17 @@ module.exports = {
   size: 'A4',
   theme: 'theme/theme_print.css', // .css or local dir or npm package. default to undefined
   entry: [
-    'content/index.html',
+    {
+      path: 'content/index.html',
+      rel: 'contents',
+    },
+    'content/maegaki.md',
     'content/yamasy/index.md',
     'content/spring-raining/index.md',
     'content/akabeko/index.md',
     'content/ogwata/index.md',
     'content/shinyu/index.md',
+    'content/atogaki.html',
   ], // 'entry' can be 'string' or 'object' if there's only single markdown file
   // entryContext: './manuscripts', // default to '.' (relative to 'vivliostyle.config.js')
   output: [
