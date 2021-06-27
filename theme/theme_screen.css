@@ -294,7 +294,7 @@ pre[class*=language-] {
   src: url("assets/YakuCaltGothic/YakuCaltGothic-R.woff") format("woff"), url("assets/YakuCaltGothic/YakuCaltGothic-R.otf") format("opentype");
 }
 :root {
-  font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+  font-family: "Yakumono", "body", "Hiragino Sans", sans-serif;
   font-weight: 400;
   line-height: 1.7;
 }
@@ -305,7 +305,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Neue Frutiger World", "Verdana", "Yakumono", "heading", "Hiragino Sans", sans-serif;
+  font-family: "Yakumono", "heading", "Hiragino Sans", sans-serif;
   font-feature-settings: "palt", "calt";
 }
 
@@ -344,7 +344,7 @@ p {
 }
 
 code, kbd {
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "Yakumono", "body", "Hiragino Sans", sans-serif;
 }
 
 pre {
@@ -508,6 +508,45 @@ ol.cite-items li::before {
   left: -2rem;
 }
 
+nav#toc ul, nav#toc ol {
+  list-style: none;
+  padding: 0;
+}
+nav#toc li {
+  margin-bottom: 1em;
+}
+nav#toc li a::after {
+  content: target-counter(attr(href), page);
+}
+nav#toc li a {
+  display: inline-flex;
+  width: 100%;
+  text-decoration: none;
+  color: currentColor;
+  align-items: center;
+}
+nav#toc li a::before {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  content: "";
+  order: 1;
+  flex: auto;
+  height: 1px;
+  box-shadow: 0 0.7px 0 -0.3px currentColor;
+}
+nav#toc li a::after {
+  text-align: right;
+  content: target-counter(attr(href), page);
+  flex: none;
+  order: 2;
+}
+nav#toc .title {
+  font-size: 120%;
+}
+nav#toc .author {
+  line-height: 1;
+}
+
 @media print {
   :root {
     widows: 3;
@@ -615,14 +654,14 @@ pre[class*=language-] {
   margin-right: 35mm;
   @top-center {
     content: env(pub-title);
-    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-family: "Yakumono", "body", "Hiragino Sans", sans-serif;
     font-size: 12px;
     text-align: left;
     padding-top: 8mm;
   }
   @bottom-left {
     content: counter(page);
-    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-family: "Yakumono", "body", "Hiragino Sans", sans-serif;
     font-size: 12px;
     border-left: 1px solid;
     margin-top: 15mm;
@@ -636,14 +675,14 @@ pre[class*=language-] {
   margin-right: 18mm;
   @top-center {
     content: env(doc-title);
-    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-family: "Yakumono", "body", "Hiragino Sans", sans-serif;
     font-size: 12px;
     text-align: right;
     padding-top: 8mm;
   }
   @bottom-right {
     content: counter(page);
-    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-family: "Yakumono", "body", "Hiragino Sans", sans-serif;
     font-size: 12px;
     border-right: 1px solid;
     margin-top: 15mm;
@@ -662,6 +701,71 @@ pre[class*=language-] {
 }
 .doc-author {
   text-align: right;
+}
+
+#まえがき {
+  break-before: right;
+}
+
+section#profile .author {
+  display: flex;
+  margin: 1rem 0;
+}
+section#profile .author img {
+  margin: 0 10px 8px 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+section#profile code {
+  margin: 0 0 0 0.5em;
+}
+section#profile code > i {
+  vertical-align: -0.03em;
+}
+section#profile .profile {
+  flex-grow: 1;
+}
+section#profile .profile h4 {
+  display: inline-block;
+  margin: 0 0 4px;
+}
+
+section#colophon {
+  position: relative;
+  float-reference: page;
+  float: bottom;
+  margin-bottom: 0;
+}
+@media screen {
+  section#colophon {
+    margin-top: 8rem;
+  }
+}
+section#colophon ul.editions {
+  padding: 0;
+  list-style: none;
+}
+section#colophon ul.editions time {
+  display: inline-block;
+  width: 14em;
+}
+section#colophon table.info {
+  margin: 0;
+  width: 100%;
+  font-size: 100%;
+  border-top: 2px solid currentColor;
+}
+section#colophon table.info tr {
+  border: 0;
+  box-shadow: none;
+}
+section#colophon table.info tr:last-child {
+  border-bottom: 1px solid currentColor;
+}
+section#colophon table.info td {
+  vertical-align: top;
+  padding-left: 0;
 }
 
 @media screen {

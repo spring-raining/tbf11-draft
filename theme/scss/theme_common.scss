@@ -4,8 +4,81 @@
 @import './font.scss';
 @import './base.scss';
 @import './counter-content.scss';
+@import './toc.scss';
 @import './page-media.scss';
 
 .doc-author {
   text-align: right;
+}
+
+#まえがき {
+  break-before: right;
+}
+
+section#profile {
+  .author {
+    display: flex;
+    margin: 1rem 0;
+    img {
+      margin: 0 10px 8px 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+  }
+
+  code {
+    margin: 0 0 0 0.5em;
+    & > i {
+      vertical-align: -0.03em;
+    }
+  }
+
+  .profile {
+    flex-grow: 1;
+    h4 {
+      display: inline-block;
+      margin: 0 0 4px;
+    }
+  }
+}
+
+section#colophon {
+  position: relative;
+  float-reference: page;
+  float: bottom;
+  margin-bottom: 0;
+
+  @media screen {
+    & {
+      margin-top: 8rem;
+    }
+  }
+
+  ul.editions {
+    padding: 0;
+    list-style: none;
+    time {
+      display: inline-block;
+      width: 14em;
+    }
+  }
+
+  table.info {
+    margin: 0;
+    width: 100%;
+    font-size: 100%;
+    border-top: 2px solid currentColor;
+    tr {
+      border: 0;
+      box-shadow: none;
+    }
+    tr:last-child {
+      border-bottom: 1px solid currentColor;
+    }
+    td {
+      vertical-align: top;
+      padding-left: 0;
+    }
+  }
 }
