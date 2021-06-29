@@ -237,9 +237,74 @@ MDX 中の JSX タグをパースします。ブロックとして JSX が出現
 
 MDX 中に登場する ESM 形式の import/export 文をパースします。import も export もまとめて `mdxjsEsm` タイプとして出力されます。
 
+以下のようなテキストが MDX で出現した場合、AST の内容は次のようになります。この AST でも、JavaScript として構文解析された結果が `estree` の中に格納されます。
+
+```jsx
+import a from 'b'
+export var c = ''
+```
+
+```javascript
+{
+  type: 'root',
+  children: [
+    {
+      type: 'mdxjsEsm',
+      value: "import a from 'b'\nexport var c = ''",
+      data: {
+        estree: {
+          ...
+        }
+      }
+    }
+  ]
+}
+```
+
 #### mdast-util-mdx-expression: `mdxFlowExpression` `mdxTextExpression`
 
 MDX 中の Expression をパースします。ブロックとして出現した場合 `mdxFlowExpression`、インラインで JSX が出現した場合 `mdxTextExpression` というタイプで出力されます。
+
+```mdx
+{
+  a + 1
+}
+
+b {true}.
+```
+
+```javascript
+{
+  type: 'root',
+  children: [
+    {
+      type: 'mdxFlowExpression',
+      value: '\na + 1\n',
+      data: {
+        estree: {
+          ...
+        }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {type: 'text', value: 'b '},
+        {
+          type: 'mdxTextExpression',
+          value: 'true',
+          data: {
+            estree: {
+              ...
+            }
+          }
+        },
+        {type: 'text', value: '.'}
+      ]
+    }
+  ]
+}
+```
 
 ## まとめ
 
