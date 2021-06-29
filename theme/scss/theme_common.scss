@@ -11,8 +11,48 @@
   text-align: right;
 }
 
-#まえがき {
-  break-before: right;
+#cover {
+  break-after: page;
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  @media print {
+    color: $color_white;
+  }
+}
+// Cover page
+@page :first {
+  background-color: #474552;
+
+  @top-left-corner {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-right-corner {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-left-corner {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+  @bottom-right-corner {
+    content: none;
+  }
+}
+
+#profile {
+  break-before: left;
 }
 
 section#profile {

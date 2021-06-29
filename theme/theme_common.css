@@ -703,8 +703,47 @@ pre[class*=language-] {
   text-align: right;
 }
 
-#まえがき {
-  break-before: right;
+#cover {
+  break-after: page;
+}
+#cover h1 {
+  font-size: 2.75rem;
+}
+@media print {
+  #cover {
+    color: #ffffff;
+  }
+}
+
+@page :first {
+  background-color: #474552;
+  @top-left-corner {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-right-corner {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-left-corner {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+  @bottom-right-corner {
+    content: none;
+  }
+}
+#profile {
+  break-before: left;
 }
 
 section#profile .author {
