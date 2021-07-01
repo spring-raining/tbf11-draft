@@ -101,7 +101,16 @@ Vivliostyle Foundation（一般社団法人ビブリオスタイル）はオー�
 
 前期末の時点で、最大の懸案は開発資金の確保であり、開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pub の開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。
 
-皆で検討した結果「挑戦してみよう」と決まった。規定により法人は応募できないので、村上代表理事と既述したコントリビュータに加え、[youchan 氏](https://github.com/youchan)、[takanakahiko 氏](https://github.com/takanakahiko)からなる個人の集まりという形で、4 月 2 日に応募を完了。そこから全員が一丸となり、夜を日に継いで Vivliostyle Pub の開発作業がはじまる。目指すのは 5 月中旬に予定されている 2 次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
+皆で検討した結果「挑戦してみよう」と決まる。規定により法人は応募できないため、以下の個人の集まりという形で、4月2日に応募を終えた。
+
+- [spring-raining](https://github.com/spring-raining) （代表）
+- [youchan](https://github.com/youchan)
+- [takanakahiko](https://github.com/takanakahiko)
+- [uetchy](https://github.com/uetchy)
+- [yamasy1549](https://github.com/yamasy1549)
+- [MurakamiShinyu](https://github.com/MurakamiShinyu)
+
+そこからチームは一丸となり、連携しながらVivliostyle Pubの開発にのめり込んでいった。目指すのは 5 月中旬に予定されている 2 次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
 
 - クラウド上にデプロイされた Vivliostyle CLI には、VFM のごく初期のパーサーが実装されている
 - Vivliostyle CLI は CSS 組版した結果をブラウザに出力できる
@@ -117,7 +126,7 @@ Vivliostyle Foundation（一般社団法人ビブリオスタイル）はオー�
 
 ![現在の Vivliostyle Pub](./img/fig-3.png){#fig-3 width=80%}
 
-開発がほぼ止まった Vivliostyle Pub をよそに、その部品とも位置づけられる VFM、Themes、Vivliostyle CLI、そして Vivliostyle Core / Viewer の方は、大きく進化させることができている。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
+開発がほぼ止まった Vivliostyle Pub をよそに、その部品とも位置づけられる VFM、Themes、Vivliostyle CLI、そして Vivliostyle Core / Viewer の方は、その後大きく進化させることができた。しかしそのためには、まず未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
