@@ -131,7 +131,7 @@ npm run preview
 
 - [Vivliostyle Flavored Markdown: Working Draft](https://vivliostyle.github.io/vfm/#/vfm)
 
-**VFM**
+#### VFM
 
 VFM の Markdown 記述例です。
 
@@ -139,7 +139,7 @@ VFM の Markdown 記述例です。
 VFM の文書
 ```
 
-**HTML**
+#### HTML
 
 VFM から変換された HTML の例です。
 
@@ -147,7 +147,7 @@ VFM から変換された HTML の例です。
 <p>VFM の文書</p>
 ```
 
-**CSS**
+#### CSS
 
 VFM から変換された HTML に対する CSS セレクターの定義例です。
 
@@ -160,7 +160,7 @@ p {
 
 プログラミング言語のソースコードなどを掲載するための構文です。言語名を指定すると [Prism](https://prismjs.com/) による構文強調を利用できます。
 
-**VFM**
+#### VFM
 
 ````md
 ```javascript
@@ -168,7 +168,7 @@ function main() {}
 ```
 ````
 
-**HTML**
+#### HTML
 
 ```html
 <pre class="language-javascript">
@@ -176,7 +176,7 @@ function main() {}
 </code></pre>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 pre {
@@ -191,7 +191,7 @@ Code 記法にはキャプションも指定できます。言語名に続けて
 
 ソースコードのファイル名や簡単な補足情報を表現する、などの用途に便利です。
 
-**VFM**
+#### VFM
 
 ````md
 ```javascript:app.js
@@ -207,7 +207,7 @@ function main() {}
 ```
 ````
 
-**HTML**
+#### HTML
 
 ```html
 <figure class="language-javascript">
@@ -220,7 +220,7 @@ function main() {}
 </figure>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 figure[class^="language-"] {
@@ -246,7 +246,7 @@ figure[class^="language-"] pre code {
 
 包み込みにより `<figure>` は `<img>` を意味的に代理するため、`id` はそちらへ移動しています。属性のコピーも代理であることを考慮してのことですが `alt` を対象にすると Web ブラウザーのスクリーン リーダーが `<img>` とあわせて二重に読み上げる問題もあるため、除外しました。
 
-**VFM**
+#### VFM
 
 ```md
 ![Figure 1](./fig1.png)
@@ -256,7 +256,7 @@ figure[class^="language-"] pre code {
 text ![Figure 3](./fig3.png)
 ```
 
-**HTML**
+#### HTML
 
 ```html
 <figure>
@@ -270,7 +270,7 @@ text ![Figure 3](./fig3.png)
 <p>text <img src="./fig3.png" alt="Figure 3" /></p>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 figure img {
@@ -287,19 +287,19 @@ figure figcaption {
 
 - [spec: Ruby annotation](https://github.com/vivliostyle/vfm/issues/10)
 
-**VFM**
+#### VFM
 
 ```
 This is {Ruby|ルビ}
 ```
 
-**HTML**
+#### HTML
 
 ```html
 This is <ruby>Ruby<rt>ルビ</rt></ruby>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 ruby {
@@ -321,7 +321,7 @@ ruby rt {
 - 見出しの `id` 属性は `<section>` へ移動されます
 - 見出しの深さに一致するように `<section>` へ `levelN` クラスを設定します
 
-**VFM**
+#### VFM
 
 ```md
 # Plain
@@ -337,7 +337,7 @@ ruby rt {
 > # Not Sectionize
 ```
 
-**HTML**
+#### HTML
 
 ```html
 <section id="plain" class="level1">
@@ -364,7 +364,7 @@ ruby rt {
 </blockquote>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 body > section {
@@ -393,7 +393,7 @@ VFM では難しい表現がある場合、生の HTML を利用できます。
 
 ただし HTML 内へ Markdown を含める場合は注意してください。基本的に HTML 内のテキストはそのまま出力されます。そのため空行を入れて HTML と Markdown を個別に処理させることで組合わせます。
 
-**VFM**
+#### VFM
 
 ```markdown
 <div class="custom">
@@ -407,7 +407,7 @@ VFM では難しい表現がある場合、生の HTML を利用できます。
 </div>
 ```
 
-**HTML**
+#### HTML
 
 ```html
 <div class="custom">
@@ -430,7 +430,7 @@ VFM では難しい表現がある場合、生の HTML を利用できます。
 
 インライン、ディスプレイともに複数行に対応しています。ただし複数行で書く場合は `$...$` や `$$...$$` の間に空行を入れないでください。空行があると前後が別段落として分離されるため、数式として処理できません。
 
-**VFM**
+#### VFM
 
 ```markdown
 inline:$x = y$
@@ -438,7 +438,7 @@ inline:$x = y$
 display: $$1 + 1 = 2$$
 ```
 
-**HTML**
+#### HTML
 
 MathJax を Vivliostyle で処理するため、特別に `<script>` タグも追加されます。対象は CDN で配布される MathJax のうち、Vivliostyle がサポート対象とするバージョンの URL となります。
 
@@ -456,7 +456,7 @@ MathJax を Vivliostyle で処理するため、特別に `<script>` タグも�
 </html>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 .math.inline {
@@ -519,7 +519,7 @@ math: true
 
 もう一つの記法としてインラインがあります。これは `^[This part is a footnote.]` のように一つの定義で脚注を定義できます。短い文章に向きます。
 
-**VFM**
+#### VFM
 
 ```markdown
 VFM is developed in the GitHub repository[^1].
@@ -530,7 +530,7 @@ Footnotes can also be written inline^[This part is a footnote.].
 [^issues]: [Issues](https://github.com/vivliostyle/vfm/issues)
 ```
 
-**HTML**
+#### HTML
 
 実際の HTML は横に長いので、適宜改行を入れています。
 
@@ -566,7 +566,7 @@ Footnotes can also be written inline^[This part is a footnote.].
 </section>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 .footnotes {
@@ -583,7 +583,7 @@ Markdown の段落内における改行は通常、行末にスペース 2 文�
 
 現在の VFM としては標準では無効化されており、オプションで有効にする必要があります。
 
-**VFM**
+#### VFM
 
 ```md
 はじめまして。
@@ -592,7 +592,7 @@ Vivliostyle Flavored Markdown（略して VFM）の世界へようこそ。
 VFM は出版物の執筆に適した Markdown 方言であり、...
 ```
 
-**HTML**
+#### HTML
 
 ```html
 <!-- hardLineBreaks: true -->
@@ -610,7 +610,7 @@ VFM は出版物の執筆に適した Markdown 方言であり、...
 </p>
 ```
 
-**CSS**
+#### CSS
 
 ```css
 p {
