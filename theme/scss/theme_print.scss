@@ -4,25 +4,3 @@
 @page {
   marks: crop cross;
 }
-
-@media print {
-  a[href^="http"] {
-    counter-increment: footnote;
-
-    &::before {
-      content: '[' counter(footnote) '] ' attr(href);
-      display: block;
-      font-size: $footnote-font-size-for-print;
-      font-weight: 400;
-      line-height: 1.7;
-      float: footnote;
-      text-align: left;
-    }
-
-    &::after {
-      font-size: 80%;
-      margin: 0 .2rem;
-      content: '[' counter(footnote) ']';
-    }
-  }
-}

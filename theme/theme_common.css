@@ -612,9 +612,9 @@ pre[class*=language-] {
 }
 @page {
   size: 182mm 257mm;
-  margin-top: 25mm;
+  margin-top: 20mm;
   padding-top: 15mm;
-  margin-bottom: 33mm;
+  margin-bottom: 24mm;
   @top-left-corner {
     content: "";
     margin-bottom: 8mm;
@@ -651,7 +651,7 @@ pre[class*=language-] {
 }
 @page :left {
   margin-left: 18mm;
-  margin-right: 35mm;
+  margin-right: 25mm;
   @top-center {
     content: env(pub-title);
     font-family: "Yakumono", "body", "Hiragino Sans", sans-serif;
@@ -671,7 +671,7 @@ pre[class*=language-] {
   }
 }
 @page :right {
-  margin-left: 35mm;
+  margin-left: 25mm;
   margin-right: 18mm;
   @top-center {
     content: env(doc-title);
@@ -696,18 +696,45 @@ pre[class*=language-] {
   margin-inline-end: 70%;
   margin-block-end: 0.8em;
 }
-@-adapt-footnote-area {
-  word-break: break-all;
-}
 .doc-author {
   text-align: right;
 }
 
+.page-break {
+  page-break-after: always !important;
+}
+
+@media print {
+  #vfm-入門-2021-夏 #nodejs-と-npm > table:nth-child(4) {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 0;
+  }
+}
+@media print {
+  a[href^=http] {
+    counter-increment: footnote;
+  }
+  a[href^=http]::before {
+    content: "[" counter(footnote) "] " attr(href);
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.7;
+    float: footnote;
+    text-align: left;
+  }
+  a[href^=http]::after {
+    font-size: 80%;
+    margin: 0 0.2rem;
+    content: "[" counter(footnote) "]";
+  }
+}
 #cover {
   break-after: page;
 }
 #cover h1 {
-  font-size: 2.75rem;
+  font-size: 2rem;
 }
 @media print {
   #cover {
